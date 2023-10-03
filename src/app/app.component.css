@@ -1,0 +1,14 @@
+div {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+  width: 400px;
+}
+div > .main-logo {
+  width: 200px;
+  margin-bottom: 10px;
+}
+div > h1 {
+  font-size: 56px;
+  font-weight: 700;
+}
