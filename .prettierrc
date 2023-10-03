@@ -13,5 +13,6 @@
   "requirePragma": false,
   "proseWrap": "always",
   "embeddedLanguageFormatting": "auto",
-  "singleAttributePerLine": false
+  "singleAttributePerLine": false,
+  "plugins": ["prettier-plugin-css-order"]
 }
