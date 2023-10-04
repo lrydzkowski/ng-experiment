@@ -1,1 +1,3 @@
-<p>products-list works!</p>
+<button mat-flat-button (click)="addProduct()">ADD PRODUCT</button>
+<button mat-flat-button (click)="removeLastProduct()">REMOVE LAST PRODUCT</button>
+<p *ngFor="let product of products" appSpy>{{ product }}</p>

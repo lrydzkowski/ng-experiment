@@ -3,6 +3,7 @@ div.main-content {
   margin: 0 auto;
   padding: 10px;
   min-width: 400px;
+  max-width: 400px;
 }
 div.main-content .logo {
   margin-bottom: 40px;
@@ -10,10 +11,11 @@ div.main-content .logo {
 }
 div.main-content .logo img {
   margin-bottom: 10px;
-  width: 200px;
+  width: 150px;
 }
-div.main-content .logo > h1 {
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 56px;
+div.main-content .logo .top-bar mat-toolbar button {
+  margin-right: 10px;
+}
+div.main-content .logo .top-bar mat-toolbar h1 {
+  margin: 0;
 }
