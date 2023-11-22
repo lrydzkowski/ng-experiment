@@ -1,0 +1,18 @@
+<core-title-bar title="Websocket Notifications"></core-title-bar>
+<div id="content">
+  <mat-form-field>
+    <mat-label>Access Token</mat-label>
+    <textarea matInput class="access-token-field" [(ngModel)]="token"></textarea>
+  </mat-form-field>
+  <button
+    mat-stroked-button
+    color="primary"
+    routerLink="/websocket-notifications"
+    (click)="initiateConnection()"
+    class="initiate-button">
+    Start
+  </button>
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  <p *ngFor="let message of messages" class="messages">{{ message }}</p>
+</div>
+

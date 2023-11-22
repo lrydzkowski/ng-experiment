@@ -14,6 +14,12 @@ import { HomePageComponent } from './features/core/pages/home-page/home-page.com
 import { TopBarComponent } from './features/core/components/top-bar/top-bar.component';
 import { TitleBarComponent } from './features/core/components/title-bar/title-bar.component';
 import { MatCardModule } from '@angular/material/card';
+import { WebsocketNotificationsPageComponent } from './features/notifications/pages/websocket-notifications-page/websocket-notifications-page.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
     HomePageComponent,
     TopBarComponent,
     TitleBarComponent,
+    WebsocketNotificationsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +40,11 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    NgFor,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
