@@ -1,22 +1,8 @@
-<div class="main-content">
-  <div class="logo">
-    <img class="main-logo" src="/assets/main-logo.png" alt="main-logo" />
-    <div class="top-bar">
-      <mat-toolbar color="primary">
-        <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <h1>ng-experiment</h1>
-      </mat-toolbar>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/home">
-          <span>Home page</span>
-        </button>
-        <button mat-menu-item routerLink="/products">
-          <span>Products</span>
-        </button>
-      </mat-menu>
-    </div>
+<div class="main">
+  <div class="top-bar">
+    <core-top-bar></core-top-bar>
   </div>
-  <catalog-products-list></catalog-products-list>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 </div>

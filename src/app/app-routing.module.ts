@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './features/home/components/home-page/home-page.component';
-import { ProductsListComponent } from './features/catalog/components/products-list/products-list.component';
+import { HomePageComponent } from './features/core/pages/home-page/home-page.component';
+import { ProductsListPageComponent } from './features/catalog/pages/products-list-page/products-list-page.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
-  { path: 'products', component: ProductsListComponent },
+  { path: '', component: HomePageComponent },
+  { path: 'products', component: ProductsListPageComponent },
 ];
 
 @NgModule({

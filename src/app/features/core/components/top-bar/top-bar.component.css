@@ -1,0 +1,13 @@
+.logo {
+  text-align: center;
+}
+.logo img {
+  margin-bottom: 10px;
+  width: 150px;
+}
+.logo .top-bar mat-toolbar button {
+  margin-right: 10px;
+}
+.logo .top-bar mat-toolbar h1 {
+  margin: 0;
+}

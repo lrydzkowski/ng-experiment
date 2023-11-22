@@ -1,21 +1,7 @@
-div.main-content {
+.main {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 10px;
   min-width: 400px;
   max-width: 400px;
-}
-div.main-content .logo {
-  margin-bottom: 40px;
-  text-align: center;
-}
-div.main-content .logo img {
-  margin-bottom: 10px;
-  width: 150px;
-}
-div.main-content .logo .top-bar mat-toolbar button {
-  margin-right: 10px;
-}
-div.main-content .logo .top-bar mat-toolbar h1 {
-  margin: 0;
 }
