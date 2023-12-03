@@ -1,4 +1,4 @@
-<core-title-bar title="Websocket Notifications"></core-title-bar>
+<core-title-bar title="SignalR Notifications"></core-title-bar>
 <div id="content">
   <mat-form-field>
     <mat-label>Access Token</mat-label>
@@ -6,6 +6,5 @@
   </mat-form-field>
   <button mat-stroked-button color="primary" (click)="initiateConnection()" class="initiate-button">Start</button>
   <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
-  <p *ngFor="let message of messages" class="messages">{{ message }}</p>
 </div>
 

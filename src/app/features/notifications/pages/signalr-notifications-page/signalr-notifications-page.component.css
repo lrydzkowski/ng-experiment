@@ -1,0 +1,23 @@
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 1rem;
+}
+#content > button {
+  flex-grow: 1;
+  height: 50px;
+  font-size: 15px;
+}
+#content .error-message {
+  color: #a53013;
+}
+#content .access-token-field {
+  min-height: 10rem;
+}
+#content .initiate-button {
+  margin-bottom: 15px;
+}
+#content .messages {
+  font-family: Consolas;
+}

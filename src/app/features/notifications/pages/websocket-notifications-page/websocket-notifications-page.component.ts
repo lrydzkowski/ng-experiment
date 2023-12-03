@@ -1,4 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
+import { NotificationsConfigurationService } from '../../services/notifications-configuration.service';
 
 @Component({
   selector: 'app-websocket-notifications-page',
@@ -11,6 +12,8 @@ export class WebsocketNotificationsPageComponent implements OnDestroy {
   messages: string[] = [];
   private socket: WebSocket | null = null;
 
+  constructor(private configuration: NotificationsConfigurationService) {}
+
   initiateConnection(): void {
     this.errorMessage = '';
     if (this.token.length === 0) {
@@ -19,7 +22,8 @@ export class WebsocketNotificationsPageComponent implements OnDestroy {
       return;
     }
 
-    this.socket = new WebSocket(`wss://localhost:7040/notifications`, ['websocket', this.token]);
+    const host = this.configuration.websocketNotificationsHost;
+    this.socket = new WebSocket(`${host}/notifications`, ['websocket', this.token]);
 
     this.socket.onopen = (event) => {
       console.log('WebSocket connection established.');
