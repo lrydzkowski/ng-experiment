@@ -48,7 +48,7 @@ import { SignalrNotificationsPageComponent } from './features/notifications/page
     NgFor,
     MatListModule,
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/ng-experiments' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/ng-experiment' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

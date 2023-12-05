@@ -1,0 +1,74 @@
+name: Build and Deploy
+run-name: ${{ github.repository }} - ${{ github.run_id }}
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  APP_IMAGE_NAME: lrydzkowski/ng-experiment
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - name: Generate version tag
+        run: echo "VERSION_TAG=$(date -u +'%Y%m%d-%H%M%Sz')" >> $GITHUB_ENV
+
+      - name: Show the version tag
+        run: echo ${{ env.VERSION_TAG }}
+
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Sign in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build an application docker image
+        id: docker_app_build
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.APP_IMAGE_NAME }}:latest,${{ env.REGISTRY }}/${{ env.APP_IMAGE_NAME }}:${{ env.VERSION_TAG }}
+
+      - uses: mathieudutour/github-tag-action@v6.1
+        with:
+          custom_tag: ${{ env.VERSION_TAG }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: ""
+
+    outputs:
+      version_tag: ${{ env.VERSION_TAG }}
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    environment:
+      name: "dev"
+
+    steps:
+      - name: Echo Version Tag
+        run: echo ${{ needs.build.outputs.version_tag }}
+
+      - name: Deploy
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: "https://rsystems.ddns.net/api/hooks/ng-experiment"
+          method: "GET"
+          customHeaders: '{"x-api-key": "${{ secrets.DEPLOY_API_KEY }}"}'
