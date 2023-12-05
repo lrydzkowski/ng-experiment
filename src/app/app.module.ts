@@ -18,7 +18,7 @@ import { WebsocketNotificationsPageComponent } from './features/notifications/pa
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { APP_BASE_HREF, NgFor } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { SignalrNotificationsPageComponent } from './features/notifications/pages/signalr-notifications-page/signalr-notifications-page.component';
 
@@ -48,7 +48,7 @@ import { SignalrNotificationsPageComponent } from './features/notifications/page
     NgFor,
     MatListModule,
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/ng-experiment' }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
