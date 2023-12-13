@@ -8,7 +8,7 @@ describe('TitleBarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TitleBarComponent]
+      imports: [TitleBarComponent],
     });
     fixture = TestBed.createComponent(TitleBarComponent);
     component = fixture.componentInstance;

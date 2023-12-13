@@ -13,4 +13,3 @@ export class NotificationsConfigurationService {
     return environment.SIGNALR_NOTIFICATIONS_HOST;
   }
 }
-

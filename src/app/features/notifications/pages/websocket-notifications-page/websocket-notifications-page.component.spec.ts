@@ -8,7 +8,7 @@ describe('WebsocketNotificationsPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WebsocketNotificationsPageComponent],
+      imports: [WebsocketNotificationsPageComponent],
     });
     fixture = TestBed.createComponent(WebsocketNotificationsPageComponent);
     component = fixture.componentInstance;
@@ -19,4 +19,3 @@ describe('WebsocketNotificationsPageComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

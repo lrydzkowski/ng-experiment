@@ -1,10 +1,18 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NotificationsConfigurationService } from '../../services/notifications-configuration.service';
+import { NgIf, NgFor } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { TitleBarComponent } from '../../../core/components/title-bar/title-bar.component';
 
 @Component({
   selector: 'app-websocket-notifications-page',
   templateUrl: './websocket-notifications-page.component.html',
   styleUrls: ['./websocket-notifications-page.component.css'],
+  standalone: true,
+  imports: [TitleBarComponent, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, NgIf, NgFor],
 })
 export class WebsocketNotificationsPageComponent implements OnDestroy {
   errorMessage = '';
@@ -48,4 +56,3 @@ export class WebsocketNotificationsPageComponent implements OnDestroy {
     this.socket?.close();
   }
 }
-

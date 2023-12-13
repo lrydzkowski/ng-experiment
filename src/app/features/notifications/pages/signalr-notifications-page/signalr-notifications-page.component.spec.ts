@@ -8,7 +8,7 @@ describe('SignalrNotificationsPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SignalrNotificationsPageComponent]
+      imports: [SignalrNotificationsPageComponent],
     });
     fixture = TestBed.createComponent(SignalrNotificationsPageComponent);
     component = fixture.componentInstance;

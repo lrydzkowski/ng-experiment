@@ -62,4 +62,3 @@ export class SignalrNotificationsService {
     this.hubConnection?.off(this.methods.ReceiveNewNotifications);
   }
 }
-

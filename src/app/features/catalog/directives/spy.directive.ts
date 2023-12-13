@@ -3,6 +3,7 @@ import { LoggerService } from 'src/app/shared/services/logger.service';
 
 @Directive({
   selector: '[appSpy]',
+  standalone: true,
 })
 export class SpyDirective implements OnInit, OnDestroy {
   constructor(private logger: LoggerService) {}

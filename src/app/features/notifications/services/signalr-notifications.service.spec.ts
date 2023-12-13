@@ -14,4 +14,3 @@ describe('SignalrNotificationsService', () => {
     expect(service).toBeTruthy();
   });
 });
-
