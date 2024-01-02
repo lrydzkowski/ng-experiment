@@ -1,25 +1,23 @@
-<div class="logo">
-  <img class="main-logo" ngSrc="/assets/main-logo.png" alt="main-logo" width="150" height="150" priority />
-  <div class="top-bar">
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <h1>ng-experiment</h1>
-    </mat-toolbar>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/">
-        <span>Home page</span>
-      </button>
-      <button mat-menu-item routerLink="/products">
-        <span>Products</span>
-      </button>
-      <button mat-menu-item routerLink="/websocket-notifications">
-        <span>Websocket Notifications</span>
-      </button>
-      <button mat-menu-item routerLink="/signalr-notifications">
-        <span>SignalR Notifications</span>
-      </button>
-    </mat-menu>
-  </div>
+<img class="main-logo" ngSrc="/assets/main-logo.png" alt="main-logo" width="150" height="150" priority />
+<div class="top-bar">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>ng-experiment</h1>
+  </mat-toolbar>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/">
+      <span>Home page</span>
+    </button>
+    <button mat-menu-item routerLink="/products">
+      <span>Products</span>
+    </button>
+    <button mat-menu-item routerLink="/websocket-notifications">
+      <span>Websocket Notifications</span>
+    </button>
+    <button mat-menu-item routerLink="/signalr-notifications">
+      <span>SignalR Notifications</span>
+    </button>
+  </mat-menu>
 </div>

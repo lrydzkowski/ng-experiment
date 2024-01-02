@@ -1,4 +1,5 @@
-div {
+:host {
+  display: block;
   background-color: #626ec4;
   padding: 15px 25px;
 }
