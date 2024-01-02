@@ -49,5 +49,11 @@
     "prettier": "^3.1.1",
     "prettier-plugin-css-order": "^2.0.1",
     "typescript": "~5.2.2"
+  },
+  "browser": {
+    "http": false,
+    "https": false,
+    "url": false,
+    "util": false
   }
 }
