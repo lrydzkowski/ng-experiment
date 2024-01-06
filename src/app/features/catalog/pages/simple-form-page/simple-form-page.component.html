@@ -1,0 +1,15 @@
+<core-title-bar title="Simple Form"></core-title-bar>
+<div class="content">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>First Name:</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Last Name:</mat-label>
+      <input matInput formControlName="lastName" />
+    </mat-form-field>
+    <button mat-stroked-button color="primary" type="submit">Submit</button>
+  </form>
+</div>
+

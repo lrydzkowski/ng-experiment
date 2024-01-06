@@ -1,0 +1,10 @@
+.content {
+  padding: 10px 0px;
+}
+form > * {
+  width: 100%;
+}
+button {
+  height: 50px;
+  font-size: 15px;
+}
