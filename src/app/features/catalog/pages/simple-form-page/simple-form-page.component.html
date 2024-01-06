@@ -2,11 +2,14 @@
 <div class="content">
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <mat-label>First Name:</mat-label>
+      <mat-label>First Name </mat-label>
       <input matInput formControlName="firstName" />
+      @if (firstName?.errors?.['required']) {
+        <mat-error>First name is required.</mat-error>
+      }
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Last Name:</mat-label>
+      <mat-label>Last Name </mat-label>
       <input matInput formControlName="lastName" />
     </mat-form-field>
     <button mat-stroked-button color="primary" type="submit">Submit</button>
