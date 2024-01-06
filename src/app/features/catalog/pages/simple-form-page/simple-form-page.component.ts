@@ -28,4 +28,3 @@ export class SimpleFormPageComponent {
     console.log(this.profileForm.value);
   }
 }
-

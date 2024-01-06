@@ -16,4 +16,3 @@ export class ProductPageComponent {
     console.log(this.productId);
   }
 }
-
