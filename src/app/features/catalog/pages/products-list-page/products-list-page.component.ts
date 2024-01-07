@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoggerService } from 'src/app/shared/services/logger.service';
 import { SpyDirective } from '../../directives/spy.directive';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,10 +17,7 @@ export class ProductsListPageComponent implements OnInit {
   products: Product[] = [];
   nextAvailableIndex = 1;
 
-  constructor(
-    private logger: LoggerService,
-    private productsApiClient: ProductsApiClientService,
-  ) {}
+  constructor(private productsApiClient: ProductsApiClientService) {}
 
   ngOnInit(): void {
     this.productsApiClient.getProducts().subscribe({
