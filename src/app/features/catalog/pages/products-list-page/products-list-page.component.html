@@ -1,4 +1,11 @@
 <core-title-bar title="Products"></core-title-bar>
 <button mat-flat-button (click)="addProduct()">ADD PRODUCT</button>
 <button mat-flat-button (click)="removeLastProduct()">REMOVE LAST PRODUCT</button>
-<p *ngFor="let product of products" appSpy>{{ product }}</p>
+@for (product of products; track product.id) {
+  <pre>
+    id: {{ product.id }}
+    name: {{ product.name }}
+    description: {{ product.description }}
+    price: {{ product.price }}
+  </pre>
+}
