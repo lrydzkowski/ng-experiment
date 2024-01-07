@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ProductsListPageComponent } from './products-list-page.component';
 import { Product } from '../../model/product';
-import { of } from 'rxjs';
 import { ProductsApiClientService } from '../../services/products-api-client.service';
+import { asyncData } from 'src/app/features/core/helpers/testing-helpers';
 
 describe('ProductsListPageComponent', () => {
   let productsApiClientSpy: jasmine.SpyObj<ProductsApiClientService>;
@@ -21,7 +21,7 @@ describe('ProductsListPageComponent', () => {
     ];
 
     productsApiClientSpy = jasmine.createSpyObj('ProductsApiClientService', ['getProducts']);
-    productsApiClientSpy.getProducts.and.returnValue(of(products));
+    productsApiClientSpy.getProducts.and.returnValue(asyncData(products));
     TestBed.configureTestingModule({
       imports: [ProductsListPageComponent],
       providers: [{ provide: ProductsApiClientService, useValue: productsApiClientSpy }],
@@ -35,9 +35,12 @@ describe('ProductsListPageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('contains pre with product id', () => {
-    const componentHtmlElement: HTMLElement = fixture.nativeElement;
-    const pre = componentHtmlElement.querySelector('pre[data-productId="1"]')!;
-    expect(pre.innerHTML).toContain('id: 1');
-  });
+  it('contains pre with product id', waitForAsync(() => {
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      const componentHtmlElement: HTMLElement = fixture.nativeElement;
+      const pre = componentHtmlElement.querySelector('pre[data-productId="1"]')!;
+      expect(pre.innerHTML).toContain('id: 1');
+    });
+  }));
 });
