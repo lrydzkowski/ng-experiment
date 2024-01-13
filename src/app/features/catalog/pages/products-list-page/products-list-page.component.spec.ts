@@ -4,6 +4,7 @@ import { ProductsListPageComponent } from './products-list-page.component';
 import { Product } from '../../model/product';
 import { ProductsApiClientService } from '../../services/products-api-client.service';
 import { asyncData } from 'src/app/features/core/helpers/testing-helpers';
+import { By } from '@angular/platform-browser';
 
 describe('ProductsListPageComponent', () => {
   let productsApiClientSpy: jasmine.SpyObj<ProductsApiClientService>;
@@ -38,9 +39,8 @@ describe('ProductsListPageComponent', () => {
   it('contains pre with product id', waitForAsync(() => {
     fixture.whenStable().then(() => {
       fixture.detectChanges();
-      const componentHtmlElement: HTMLElement = fixture.nativeElement;
-      const pre = componentHtmlElement.querySelector('pre[data-productId="1"]')!;
-      expect(pre.innerHTML).toContain('id: 1');
+      const pre = fixture.debugElement.query(By.css('pre[data-productId="1"]'));
+      expect(pre.nativeElement.innerHTML).toContain('id: 1');
     });
   }));
 });
