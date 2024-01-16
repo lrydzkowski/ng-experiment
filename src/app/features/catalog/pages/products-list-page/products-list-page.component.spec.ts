@@ -40,7 +40,7 @@ describe('ProductsListPageComponent', () => {
     fixture.whenStable().then(() => {
       fixture.detectChanges();
       const pre = fixture.debugElement.query(By.css('pre[data-productId="1"]'));
-      expect(pre.nativeElement.innerHTML).toContain('id: -1');
+      expect(pre.nativeElement.innerHTML).toContain('id: 1');
     });
   }));
 });
