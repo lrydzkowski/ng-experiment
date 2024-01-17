@@ -39,7 +39,7 @@ describe('ProductsListPageComponent', () => {
   it('contains pre with product id', waitForAsync(() => {
     fixture.whenStable().then(() => {
       fixture.detectChanges();
-      const pre = fixture.debugElement.query(By.css('pre[data-productId="1"]'));
+      const pre = fixture.debugElement.query(By.css('div[data-productId="1"]'));
       expect(pre.nativeElement.innerHTML).toContain('id: 1');
     });
   }));
