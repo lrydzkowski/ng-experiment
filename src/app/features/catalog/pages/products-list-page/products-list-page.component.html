@@ -2,10 +2,10 @@
 <button mat-flat-button (click)="addProduct()">ADD PRODUCT</button>
 <button mat-flat-button (click)="removeLastProduct()">REMOVE LAST PRODUCT</button>
 @for (product of products; track product.id) {
-  <pre [attr.data-productId]="product.id">
-    id: {{ product.id }}
-    name: {{ product.name }}
-    description: {{ product.description }}
-    price: {{ product.price }}
-  </pre>
+  <div class="product" [attr.data-productId]="product.id">
+    <p>id: {{ product.id }}</p>
+    <p>name: {{ product.name }}</p>
+    <p>description: {{ product.description }}</p>
+    <p>price: {{ product.price }}</p>
+  </div>
 }
