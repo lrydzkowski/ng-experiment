@@ -4,5 +4,8 @@
   </div>
   <div class="content">
     <router-outlet></router-outlet>
+    @if (loading) {
+      <p class="loading">Loading...</p>
+    }
   </div>
 </div>

@@ -6,14 +6,18 @@ import { SignalrNotificationsPageComponent } from './features/notifications/page
 import { NotFoundPageComponent } from './features/core/pages/not-found-page/not-found-page.component';
 import { ProductPageComponent } from './features/catalog/pages/product-page/product-page.component';
 import { SimpleFormPageComponent } from './features/catalog/pages/simple-form-page/simple-form-page.component';
+import { LoginPageComponent } from './features/core/pages/login-page/login-page.component';
+import { anonymousGuard } from './features/core/guards/anonymous.guard';
+import { authGuard } from './features/core/guards/auth.guard';
 
 export const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
-  { path: 'products', component: ProductsListPageComponent },
-  { path: 'product/:productId', component: ProductPageComponent },
-  { path: 'simple-form', component: SimpleFormPageComponent },
-  { path: 'websocket-notifications', component: WebsocketNotificationsPageComponent },
-  { path: 'signalr-notifications', component: SignalrNotificationsPageComponent },
+  { path: 'login', component: LoginPageComponent, canActivate: [anonymousGuard] },
+  { path: 'home', component: HomePageComponent, canActivate: [authGuard] },
+  { path: 'products', component: ProductsListPageComponent, canActivate: [authGuard] },
+  { path: 'product/:productId', component: ProductPageComponent, canActivate: [authGuard] },
+  { path: 'simple-form', component: SimpleFormPageComponent, canActivate: [authGuard] },
+  { path: 'websocket-notifications', component: WebsocketNotificationsPageComponent, canActivate: [authGuard] },
+  { path: 'signalr-notifications', component: SignalrNotificationsPageComponent, canActivate: [authGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundPageComponent },
 ];
