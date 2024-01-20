@@ -1,0 +1,11 @@
+<core-title-bar title="Profile"></core-title-bar>
+@if (loading) {
+  <p class="loading">Loading...</p>
+}
+@if (user) {
+  <ul>
+    <li>Name: {{ user.name }}</li>
+    <li>Nickname: {{ user.nickname }}</li>
+  </ul>
+}
+

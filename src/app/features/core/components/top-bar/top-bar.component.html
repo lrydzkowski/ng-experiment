@@ -4,22 +4,36 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1>ng-experiment</h1>
+    @if (isAuthenticated) {
+      <button mat-icon-button routerLink="/profile">
+        <mat-icon>person</mat-icon>
+      </button>
+    }
   </mat-toolbar>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/">
-      <span>Home</span>
-    </button>
-    <button mat-menu-item routerLink="/products">
-      <span>Products</span>
-    </button>
-    <button mat-menu-item routerLink="/websocket-notifications">
-      <span>Websocket Notifications</span>
-    </button>
-    <button mat-menu-item routerLink="/signalr-notifications">
-      <span>SignalR Notifications</span>
-    </button>
-    <button mat-menu-item routerLink="/simple-form">
-      <span>Simple Form</span>
-    </button>
+    @if (!isAuthenticated) {
+      <button mat-menu-item routerLink="/login">
+        <span>Login</span>
+      </button>
+    } @else {
+      <button mat-menu-item routerLink="/home">
+        <span>Home</span>
+      </button>
+      <button mat-menu-item routerLink="/products">
+        <span>Products</span>
+      </button>
+      <button mat-menu-item routerLink="/websocket-notifications">
+        <span>Websocket Notifications</span>
+      </button>
+      <button mat-menu-item routerLink="/signalr-notifications">
+        <span>SignalR Notifications</span>
+      </button>
+      <button mat-menu-item routerLink="/simple-form">
+        <span>Simple Form</span>
+      </button>
+      <button mat-menu-item (click)="auth.logout()">
+        <span>Logout</span>
+      </button>
+    }
   </mat-menu>
 </div>
