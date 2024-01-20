@@ -19,6 +19,15 @@ export const appConfig: ApplicationConfig = {
       clientId: environment.AUTH0_CLIENT_ID,
       authorizationParams: {
         redirect_uri: environment.AUTH0_REDIRECT_URI,
+        scope: environment.AUTH0_SCOPE,
+        audience: environment.AUTH0_AUDIENCE,
+      },
+      httpInterceptor: {
+        allowedList: [
+          {
+            uri: `${environment.LEXICA_API_HOST}/words/*`,
+          },
+        ],
       },
     }),
   ],

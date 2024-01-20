@@ -14,7 +14,7 @@ export class ProductsApiClientService {
   ) {}
 
   getProducts(): Observable<Product[]> {
-    const catalogHost = this.catalogConfiguration.catalogHost;
+    const catalogHost = this.catalogConfiguration.catalogApiHost;
 
     return this.httpClient.get<Product[]>(`${catalogHost}/products`, {
       responseType: 'json',

@@ -10,6 +10,7 @@ import { LoginPageComponent } from './features/core/pages/login-page/login-page.
 import { anonymousGuard } from './features/core/guards/anonymous.guard';
 import { authGuard } from './features/core/guards/auth.guard';
 import { ProfilePageComponent } from './features/core/pages/profile-page/profile-page.component';
+import { WordsPageComponent } from './features/lexica/pages/words-page/words-page.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginPageComponent, canActivate: [anonymousGuard] },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'simple-form', component: SimpleFormPageComponent, canActivate: [authGuard] },
   { path: 'websocket-notifications', component: WebsocketNotificationsPageComponent, canActivate: [authGuard] },
   { path: 'signalr-notifications', component: SignalrNotificationsPageComponent, canActivate: [authGuard] },
+  { path: 'words', component: WordsPageComponent, canActivate: [authGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundPageComponent },
 ];
