@@ -4,6 +4,11 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1>ng-experiment</h1>
+    @if (isAuthenticated) {
+      <button mat-icon-button routerLink="/profile">
+        <mat-icon>person</mat-icon>
+      </button>
+    }
   </mat-toolbar>
   <mat-menu #menu="matMenu">
     @if (!isAuthenticated) {

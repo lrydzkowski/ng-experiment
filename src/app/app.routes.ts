@@ -9,10 +9,12 @@ import { SimpleFormPageComponent } from './features/catalog/pages/simple-form-pa
 import { LoginPageComponent } from './features/core/pages/login-page/login-page.component';
 import { anonymousGuard } from './features/core/guards/anonymous.guard';
 import { authGuard } from './features/core/guards/auth.guard';
+import { ProfilePageComponent } from './features/core/pages/profile-page/profile-page.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginPageComponent, canActivate: [anonymousGuard] },
   { path: 'home', component: HomePageComponent, canActivate: [authGuard] },
+  { path: 'profile', component: ProfilePageComponent, canActivate: [authGuard] },
   { path: 'products', component: ProductsListPageComponent, canActivate: [authGuard] },
   { path: 'product/:productId', component: ProductPageComponent, canActivate: [authGuard] },
   { path: 'simple-form', component: SimpleFormPageComponent, canActivate: [authGuard] },
