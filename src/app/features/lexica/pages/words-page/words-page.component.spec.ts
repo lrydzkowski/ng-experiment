@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WordsPageComponent } from './words-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('WordsPageComponent', () => {
   let component: WordsPageComponent;
@@ -9,8 +9,9 @@ describe('WordsPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WordsPageComponent, HttpClientModule],
-    }).compileComponents();
+    imports: [WordsPageComponent],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
 
     fixture = TestBed.createComponent(WordsPageComponent);
     component = fixture.componentInstance;
