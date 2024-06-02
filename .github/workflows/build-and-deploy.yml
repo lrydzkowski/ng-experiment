@@ -84,6 +84,6 @@ jobs:
       - name: Deploy
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://rsystems.ddns.net/api/hooks/ng-experiment"
+          url: "https://r-systems-cloud.com/api/hooks/ng-experiment"
           method: "GET"
           customHeaders: '{"x-api-key": "${{ secrets.DEPLOY_API_KEY }}"}'
