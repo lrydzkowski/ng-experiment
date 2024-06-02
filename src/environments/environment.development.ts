@@ -7,5 +7,5 @@ export const environment = {
   AUTH0_CLIENT_ID: 'LQz2ypHbhO8gJxG7PvY5uRVMF7vSSgDb',
   AUTH0_REDIRECT_URI: 'http://localhost:4200',
   AUTH0_SCOPE: 'openid offline_access profile',
-  AUTH0_AUDIENCE: 'https://rsystems.ddns.net/api/lexica',
+  AUTH0_AUDIENCE: 'https://r-systems-cloud.com/api/lexica',
 };
