@@ -7,6 +7,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { authHttpInterceptorFn, provideAuth0 } from '@auth0/auth0-angular';
 import { environment } from 'src/environments/environment';
+import { BASE_PATH } from 'src/_generated/lexica-api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,5 +31,6 @@ export const appConfig: ApplicationConfig = {
         ],
       },
     }),
+    { provide: BASE_PATH, useValue: environment.LEXICA_API_HOST },
   ],
 };

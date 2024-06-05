@@ -1,4 +1,8 @@
 <core-title-bar title="Words"></core-title-bar>
 <div class="content">
   <button mat-stroked-button color="primary" (click)="getWordDefinitions()">Get Word Definitions</button>
+  @if (isLoading) {
+    <p>Loading...</p>
+  }
 </div>
+
